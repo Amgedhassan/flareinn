@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flareinn | Own Originality.</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Define custom fonts and colors using Tailwind's theme extension */
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'serif': ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        'gallery-white': '#F8F8F8',
+                        'studio-noir': '#1A1A1A',
+                        'accent': '#E57300', // A sophisticated burnt orange
+                        'accent-hover': '#CC6600',
+                    }
+                }
+            }
+        }
+
+        /* Simple animation for elements fading in on scroll */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in-element {
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0;
+        }
+        
+        /* Hide scrollbar for the horizontal feed but still allow scrolling */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+</head>
+<body class="bg-gallery-white text-studio-noir font-sans">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="absolute top-0 left-0 w-full z-30 p-4 md:p-6">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="text-2xl md:text-3xl font-serif font-bold text-white">Flareinn</a>
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center space-x-6 text-white font-medium">
+                <a href="#" class="hover:text-accent transition-colors duration-300">Discover</a>
+                <a href="#" class="hover:text-accent transition-colors duration-300">Collections</a>
+                <a href="#" class="hover:text-accent transition-colors duration-300">Artists</a>
+                <a href="#" class="hover:text-accent transition-colors duration-300">About</a>
+            </nav>
+            <!-- CTA & Mobile Menu -->
+            <div class="flex items-center space-x-4">
+                 <a href="#" class="px-5 py-2 text-sm font-semibold text-white bg-white/20 rounded-full backdrop-blur-sm hover:bg-white/30 transition-colors duration-300">Log In</a>
+                 <a href="#" class="relative text-white hover:text-accent transition-colors duration-300">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    <span class="absolute -top-2 -right-2 bg-accent text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">3</span>
+                 </a>
+                 <button class="md:hidden text-white">
+                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                 </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECTION 1: THE HERO -->
+    <section class="relative h-screen min-h-[700px] flex items-center justify-center text-white text-center">
+        <div class="absolute inset-0 bg-black">
+            <img src="https://images.pexels.com/photos/1616403/pexels-photo-1616403.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Artist studio background" class="w-full h-full object-cover opacity-50">
+        </div>
+        
+        <div class="relative z-10 p-4">
+            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-extrabold leading-tight">Own Originality.</h1>
+            <p class="font-sans text-lg md:text-xl max-w-2xl mx-auto mt-4 text-gray-200">
+                Discover and collect art from the world's most passionate independent artists.
+            </p>
+             <p class="font-sans text-sm md:text-base max-w-2xl mx-auto mt-4 text-gray-400">
+                *Over 200 original pieces found a home this month. Find yours before it's gone.*
+            </p>
+            <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#featured-originals" class="w-full sm:w-auto px-10 py-4 font-bold text-white bg-accent rounded-full hover:bg-accent-hover transition-all duration-300 transform hover:scale-105">
+                    Shop Bestsellers
+                </a>
+            </div>
+             <a href="#artist-cta" class="mt-6 inline-block text-gray-300 hover:text-white transition-colors duration-300">
+                Are you an Artist? Sell with us.
+            </a>
+        </div>
+    </section>
+    
+    <!-- NEW SECTION 1.5: TRENDING ARTWORK -->
+    <section class="bg-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between mb-8">
+                <h2 class="text-3xl font-serif font-bold">Trending Artwork</h2>
+                <a href="#" class="px-6 py-2 font-bold text-accent border border-accent rounded-full hover:bg-accent hover:text-white transition-colors duration-300">
+                    Shop New Arrivals
+                </a>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Trending Item 1 -->
+                <div class="group">
+                    <div class="relative overflow-hidden rounded-lg">
+                        <img src="https://images.pexels.com/photos/2250293/pexels-photo-2250293.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Trending art piece 1" class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">SELLING FAST</div>
+                    </div>
+                    <div class="pt-4">
+                        <h3 class="font-bold text-lg">Cerulean Dream</h3>
+                        <p class="text-gray-600">by Jonas K.</p>
+                        <p class="font-bold text-accent mt-1">$1,250</p>
+                    </div>
+                </div>
+                <!-- Trending Item 2 -->
+                 <div class="group">
+                    <div class="relative overflow-hidden rounded-lg">
+                        <img src="https://images.pexels.com/photos/2693447/pexels-photo-2693447.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Trending art piece 2" class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="pt-4">
+                        <h3 class="font-bold text-lg">Gilded Coast</h3>
+                        <p class="text-gray-600">by Maria Petrova</p>
+                        <p class="font-bold text-accent mt-1">$890</p>
+                    </div>
+                </div>
+                <!-- Trending Item 3 -->
+                <div class="group">
+                    <div class="relative overflow-hidden rounded-lg">
+                         <img src="https://images.pexels.com/photos/1149022/pexels-photo-1149022.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Trending art piece 3" class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500">
+                         <div class="absolute top-2 left-2 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full">JUST ADDED</div>
+                    </div>
+                    <div class="pt-4">
+                        <h3 class="font-bold text-lg">Metropolis #3</h3>
+                        <p class="text-gray-600">by Chen W.</p>
+                        <p class="font-bold text-accent mt-1">$2,100</p>
+                    </div>
+                </div>
+                <!-- Trending Item 4 -->
+                 <div class="group">
+                    <div class="relative overflow-hidden rounded-lg">
+                        <img src="https://images.pexels.com/photos/2180883/pexels-photo-2180883.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Trending art piece 4" class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="pt-4">
+                        <h3 class="font-bold text-lg">Still Life with Lemon</h3>
+                        <p class="text-gray-600">by A. Ndiaye</p>
+                        <p class="font-bold text-accent mt-1">$600</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main id="main-content" class="container mx-auto px-4 py-16 md:py-24 space-y-24 md:space-y-32">
+        <!-- SECTION 2: CURATED COLLECTIONS -->
+        <section class="scroll-target">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold">Shop by Style</h2>
+                <p class="mt-3 text-lg text-gray-600 max-w-xl mx-auto">From emerging trends to iconic styles, start your journey here.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 h-auto md:h-[600px]">
+                <!-- Item 1 (Large) -->
+                <a href="#" class="relative overflow-hidden rounded-lg group col-span-1 md:col-span-2 lg:row-span-2">
+                    <img src="https://images.pexels.com/photos/1269968/pexels-photo-1269968.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Abstract Art">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-50 transition-all duration-500 flex flex-col items-center justify-center p-6 text-center">
+                        <h3 class="text-white text-3xl font-serif font-bold">The New Abstract</h3>
+                        <div class="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform group-hover:translate-y-0 translate-y-4">
+                           <span class="px-6 py-2 font-bold text-studio-noir bg-white rounded-full">Shop Now</span>
+                        </div>
+                    </div>
+                </a>
+                <!-- Item 2 -->
+                <a href="#" class="relative overflow-hidden rounded-lg group">
+                    <img src="https://images.pexels.com/photos/102127/pexels-photo-102127.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Monochromatic Art">
+                     <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-50 transition-all duration-500 flex flex-col items-center justify-center p-6 text-center">
+                        <h3 class="text-white text-2xl font-serif font-bold">Monochromatic</h3>
+                        <div class="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform group-hover:translate-y-0 translate-y-4">
+                           <span class="px-6 py-2 font-bold text-studio-noir bg-white rounded-full">Shop Now</span>
+                        </div>
+                    </div>
+                </a>
+                <!-- Item 3 -->
+                <a href="#" class="relative overflow-hidden rounded-lg group">
+                    <img src="https://images.pexels.com/photos/321452/pexels-photo-321452.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Urban Landscapes">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-50 transition-all duration-500 flex flex-col items-center justify-center p-6 text-center">
+                        <h3 class="text-white text-2xl font-serif font-bold">Landscapes</h3>
+                         <div class="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform group-hover:translate-y-0 translate-y-4">
+                           <span class="px-6 py-2 font-bold text-studio-noir bg-white rounded-full">Shop Now</span>
+                        </div>
+                    </div>
+                </a>
+                <!-- Item 4 (Spans 2 columns) -->
+                 <a href="#" class="relative overflow-hidden rounded-lg group col-span-1 md:col-span-2">
+                    <img src="https://images.pexels.com/photos/1496373/pexels-photo-1496373.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Figurative Portraits">
+                    <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-50 transition-all duration-500 flex flex-col items-center justify-center p-6 text-center">
+                        <h3 class="text-white text-2xl font-serif font-bold">Figurative Portraits</h3>
+                         <div class="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform group-hover:translate-y-0 translate-y-4">
+                           <span class="px-6 py-2 font-bold text-studio-noir bg-white rounded-full">Shop Now</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+        
+        <!-- NEW: FEATURED ORIGINALS (SHOPPABLE) -->
+        <section id="featured-originals" class="scroll-target">
+             <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold">Featured Originals</h2>
+                <p class="mt-3 text-lg text-gray-600 max-w-xl mx-auto">Hand-picked bestsellers ready to find a new home.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="group">
+                    <div class="bg-white p-4 rounded-lg shadow-lg transition-shadow duration-300 hover:shadow-2xl">
+                        <img src="https://images.pexels.com/photos/1203803/pexels-photo-1203803.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Featured art piece 1" class="w-full h-80 object-cover rounded-md mb-4">
+                        <h3 class="font-bold text-lg">Crimson Tide</h3>
+                        <p class="text-gray-500 text-sm">By Santiago L.</p>
+                        <p class="text-xl font-bold text-studio-noir mt-2">$1,800</p>
+                        <a href="#" class="mt-4 block w-full text-center px-6 py-3 font-bold text-white bg-accent rounded-full hover:bg-accent-hover transition-colors duration-300">View Details</a>
+                    </div>
+                </div>
+                 <!-- Product 2 -->
+                <div class="group">
+                    <div class="bg-white p-4 rounded-lg shadow-lg transition-shadow duration-300 hover:shadow-2xl">
+                        <img src="https://images.pexels.com/photos/1570264/pexels-photo-1570264.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Featured art piece 2" class="w-full h-80 object-cover rounded-md mb-4">
+                        <h3 class="font-bold text-lg">Woman in Repose</h3>
+                        <p class="text-gray-500 text-sm">By Elena Vasilieva</p>
+                        <p class="text-xl font-bold text-studio-noir mt-2">$3,400</p>
+                        <a href="#" class="mt-4 block w-full text-center px-6 py-3 font-bold text-white bg-accent rounded-full hover:bg-accent-hover transition-colors duration-300">View Details</a>
+                    </div>
+                </div>
+                 <!-- Product 3 -->
+                <div class="group">
+                    <div class="bg-white p-4 rounded-lg shadow-lg transition-shadow duration-300 hover:shadow-2xl">
+                        <img src="https://images.pexels.com/photos/1457812/pexels-photo-1457812.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Featured art piece 3" class="w-full h-80 object-cover rounded-md mb-4">
+                        <h3 class="font-bold text-lg">City at Dusk</h3>
+                        <p class="text-gray-500 text-sm">By Kenji Tanaka</p>
+                        <p class="text-xl font-bold text-studio-noir mt-2">$950</p>
+                        <a href="#" class="mt-4 block w-full text-center px-6 py-3 font-bold text-white bg-accent rounded-full hover:bg-accent-hover transition-colors duration-300">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: THE FLAREINN DIFFERENCE -->
+        <section class="scroll-target text-center md:text-left">
+             <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="flex flex-col items-center md:items-start">
+                    <svg class="w-12 h-12 mb-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <h3 class="text-2xl font-serif font-bold">Authenticated Originals</h3>
+                    <p class="mt-2 text-gray-600">Every piece is a one-of-a-kind original, signed by the artist and verified by our team.</p>
+                </div>
+                <div class="flex flex-col items-center md:items-start">
+                    <svg class="w-12 h-12 mb-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9V3m0 18a9 9 0 009-9M3 12a9 9 0 019-9m-9 9h18"></path></svg>
+                    <h3 class="text-2xl font-serif font-bold">Global Artist Network</h3>
+                    <p class="mt-2 text-gray-600">We empower independent artists from over 50 countries to share their vision and passion.</p>
+                </div>
+                <div class="flex flex-col items-center md:items-start">
+                    <svg class="w-12 h-12 mb-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    <h3 class="text-2xl font-serif font-bold">Secure & Insured Shipping</h3>
+                    <p class="mt-2 text-gray-600">Your purchase is secure, and your new art is insured from our wall to yours.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: ARTIST SPOTLIGHT -->
+        <section class="scroll-target">
+            <div class="bg-white rounded-lg shadow-xl overflow-hidden flex flex-col md:flex-row items-center">
+                <div class="w-full md:w-1/2 h-64 md:h-auto">
+                    <img src="https://images.pexels.com/photos/716276/pexels-photo-716276.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Portrait of an artist" class="w-full h-full object-cover">
+                </div>
+                <div class="w-full md:w-1/2 p-8 md:p-12 lg:p-16 text-center md:text-left">
+                    <p class="font-serif text-3xl md:text-4xl leading-snug">
+                        "For me, painting is not a choice. It's like breathing. It's how I translate the world."
+                    </p>
+                    <p class="mt-4 font-bold text-xl">Maria Petrova, Alexandria</p>
+                    <a href="#" class="mt-8 inline-block px-8 py-3 font-bold text-white bg-studio-noir rounded-full hover:bg-gray-800 transition-colors duration-300">
+                        Discover Maria's Work
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: SOCIAL PROOF -->
+        <section class="scroll-target">
+             <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold">As Seen In Your Homes</h2>
+                <p class="mt-3 text-lg text-gray-600 max-w-xl mx-auto">See how Flareinn collectors are transforming their spaces. Share yours with #Flareinn.</p>
+            </div>
+            <div class="flex overflow-x-auto space-x-6 pb-4 no-scrollbar">
+                <!-- Image 1 -->
+                <div class="flex-shrink-0 w-80 rounded-lg overflow-hidden shadow-lg group">
+                    <img src="https://images.pexels.com/photos/1648771/pexels-photo-1648771.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="w-full h-96 object-cover" alt="Art in a living room">
+                    <p class="p-4 text-sm bg-white font-medium text-gray-700">"The centerpiece of our living room!" - David L.</p>
+                </div>
+                <!-- Image 2 -->
+                <div class="flex-shrink-0 w-80 rounded-lg overflow-hidden shadow-lg group">
+                    <img src="https://images.pexels.com/photos/3757055/pexels-photo-3757055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="w-full h-96 object-cover" alt="Art above a desk">
+                    <p class="p-4 text-sm bg-white font-medium text-gray-700">"Waking up to this everyday is a joy." - Sarah K.</p>
+                </div>
+                <!-- Image 3 -->
+                <div class="flex-shrink-0 w-80 rounded-lg overflow-hidden shadow-lg group">
+                    <img src="https://images.pexels.com/photos/6434623/pexels-photo-6434623.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="w-full h-96 object-cover" alt="Art in a hallway">
+                    <p class="p-4 text-sm bg-white font-medium text-gray-700">"It completely transformed our hallway." - Michael P.</p>
+                </div>
+                <!-- Image 4 -->
+                <div class="flex-shrink-0 w-80 rounded-lg overflow-hidden shadow-lg group">
+                    <img src="https://images.pexels.com/photos/584399/living-room-couch-interior-us-584399.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="w-full h-96 object-cover" alt="Art above a sofa">
+                    <p class="p-4 text-sm bg-white font-medium text-gray-700">"The quality is just outstanding." - Chen W.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <!-- SECTION 6: ARTIST CTA -->
+    <section id="artist-cta" class="scroll-target bg-studio-noir text-gallery-white">
+        <div class="container mx-auto px-4 py-16 md:py-24 text-center">
+            <h2 class="text-4xl md:text-5xl font-serif font-bold">Your Art Deserves an Audience.</h2>
+            <p class="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
+                Join a curated community of artists. We handle the logistics, you focus on creating. Zero listing fees.
+            </p>
+            <a href="#" class="mt-8 inline-block px-10 py-4 font-bold text-studio-noir bg-gallery-white rounded-full hover:bg-gray-200 transition-all duration-300 transform hover:scale-105">
+                Start Selling Your Art
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-100">
+        <div class="container mx-auto px-4 py-12">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
+                <div class="col-span-2 lg:col-span-1">
+                    <a href="#" class="text-3xl font-serif font-bold text-studio-noir">Flareinn</a>
+                    <p class="mt-2 text-sm text-gray-600">&copy; 2025 Flareinn Inc. <br> All Rights Reserved.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold tracking-wider uppercase">Discover</h4>
+                    <ul class="mt-4 space-y-2 text-sm text-gray-600">
+                        <li><a href="#" class="hover:text-accent">New Arrivals</a></li>
+                        <li><a href="#" class="hover:text-accent">Collections</a></li>
+                        <li><a href="#" class="hover:text-accent">Gift Guide</a></li>
+                        <li><a href="#" class="hover:text-accent">Find an Artist</a></li>
+                    </ul>
+                </div>
+                 <div>
+                    <h4 class="font-bold tracking-wider uppercase">About</h4>
+                    <ul class="mt-4 space-y-2 text-sm text-gray-600">
+                        <li><a href="#" class="hover:text-accent">Our Story</a></li>
+                        <li><a href="#" class="hover:text-accent">Careers</a></li>
+                        <li><a href="#" class="hover:text-accent">Press</a></li>
+                    </ul>
+                </div>
+                 <div>
+                    <h4 class="font-bold tracking-wider uppercase">Support</h4>
+                    <ul class="mt-4 space-y-2 text-sm text-gray-600">
+                        <li><a href="#" class="hover:text-accent">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-accent">FAQ</a></li>
+                        <li><a href="#" class="hover:text-accent">Shipping</a></li>
+                        <li><a href="#" class="hover:text-accent">Returns</a></li>
+                    </ul>
+                </div>
+                 <div>
+                    <h4 class="font-bold tracking-wider uppercase">Connect</h4>
+                    <div class="flex mt-4 space-x-4">
+                        <a href="#" class="text-gray-500 hover:text-accent"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg></a>
+                        <a href="#" class="text-gray-500 hover:text-accent"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg></a>
+                        <a href="#" class="text-gray-500 hover:text-accent"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.345 2.525c.636-.247 1.363-.416 2.427-.465C9.794 2.013 10.148 2 12.315 2zM12 7.188a4.813 4.813 0 100 9.626 4.813 4.813 0 000-9.626zM12 15a3 3 0 110-6 3 3 0 010 6zm4.875-8.25a1.125 1.125 0 110 2.25 1.125 1.125 0 010-2.25z" clip-rule="evenodd" /></svg></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- EMAIL CAPTURE BANNER -->
+    <div id="email-banner" class="fixed bottom-0 left-0 w-full bg-studio-noir text-gallery-white p-4 z-50 transform translate-y-full transition-transform duration-500 ease-in-out">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+            <div class="text-center md:text-left mb-4 md:mb-0">
+                <h4 class="font-bold text-lg">Unlock Free Insured Shipping</h4>
+                <p class="text-sm text-gray-300">Join our mailing list and get free insured shipping on your first order.</p>
+            </div>
+            <form class="flex w-full md:w-auto">
+                <input type="email" placeholder="Enter your email" class="px-4 py-2 rounded-l-full text-studio-noir w-full md:w-64 focus:outline-none focus:ring-2 focus:ring-accent">
+                <button type="submit" class="px-6 py-2 bg-accent text-white font-bold rounded-r-full hover:bg-accent-hover transition-colors">Subscribe</button>
+            </form>
+            <button id="close-banner" class="absolute top-2 right-2 text-gray-400 hover:text-white">&times;</button>
+        </div>
+    </div>
+
+    <script>
+        // Intersection Observer for fade-in animations
+        document.addEventListener("DOMContentLoaded", function() {
+            const targets = document.querySelectorAll('.scroll-target');
+            const banner = document.getElementById('email-banner');
+            const closeBannerBtn = document.getElementById('close-banner');
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in-element');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            targets.forEach(target => {
+                observer.observe(target);
+            });
+
+            // Email Banner Logic
+            setTimeout(() => {
+                banner.classList.remove('translate-y-full');
+            }, 3000); // Show banner after 3 seconds
+
+            closeBannerBtn.addEventListener('click', () => {
+                banner.classList.add('translate-y-full');
+            });
+        });
+    </script>
+</body>
+</html>
