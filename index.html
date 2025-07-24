@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flareinn | Find Art That Speaks to You</title>
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
     
-    <style>
-        /* Define custom fonts and colors using Tailwind's theme extension */
+    <!-- Tailwind CSS Configuration -->
+    <script>
         tailwind.config = {
             theme: {
                 extend: {
@@ -32,7 +32,9 @@
                 }
             }
         }
-
+    </script>
+    
+    <style>
         /* Animation for elements fading in on scroll */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
@@ -53,6 +55,7 @@
             background-color: rgba(26, 26, 26, 0.9);
             backdrop-filter: blur(8px);
             animation: slideDown 0.5s ease-out;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
         @keyframes slideDown {
@@ -63,7 +66,7 @@
         /* Subtle background pattern for premium section */
         .premium-bg {
             background-color: #1a1a1a;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%232a2a2a' fill-opacity='0.4'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%232a2a2a' fill-opacity='0.4'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
     </style>
 </head>
@@ -74,25 +77,24 @@
         <div class="container mx-auto">
             <!-- Top Nav Row -->
             <div class="flex justify-between items-center">
-                <a href="#" class="text-2xl md:text-3xl font-serif font-bold text-white">Flareinn</a>
-                <div class="hidden lg:flex w-full max-w-md mx-4">
-                    <input type="search" placeholder="Search for artists, styles, or artworks" class="w-full px-4 py-2 text-sm text-gray-800 bg-white/90 rounded-l-full focus:outline-none focus:ring-2 focus:ring-accent">
-                    <button class="px-4 py-2 bg-accent text-white font-semibold rounded-r-full hover:bg-accent-hover">Search</button>
-                </div>
+                <a href="#" aria-label="Flareinn Homepage">
+                    <img src="https://i.ibb.co/9gq8JqT/flareinn-logo-light.png" alt="Flareinn Logo" class="h-10 md:h-12 w-auto">
+                </a>
                 <div class="flex items-center space-x-4 text-white">
                      <a href="#" class="hidden sm:block text-sm font-semibold hover:text-accent">Login or register</a>
                      <a href="#" class="hidden md:block text-sm font-semibold hover:text-accent">Need help?</a>
-                     <a href="#" class="relative hover:text-accent">
+                     <a href="#" class="relative hover:text-accent" aria-label="Shopping Cart with 3 items">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
                         <span class="absolute -top-2 -right-2 bg-accent text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">3</span>
                      </a>
-                     <button class="xl:hidden text-white" id="mobile-menu-button">
-                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                     <!-- Hamburger Button -->
+                     <button class="lg:hidden text-white" id="mobile-menu-button" aria-label="Open mobile menu" aria-expanded="false">
+                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path id="menu-icon-open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path><path id="menu-icon-close" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                      </button>
                 </div>
             </div>
             <!-- Bottom Nav Row (Categories) -->
-            <nav class="hidden xl:flex justify-center items-center space-x-6 text-white font-medium pt-3 mt-3 border-t border-white/20">
+            <nav class="hidden lg:flex justify-center items-center space-x-6 text-white font-medium pt-3 mt-3 border-t border-white/20">
                 <a href="#" class="hover:text-accent">All Art Styles</a>
                 <a href="#" class="hover:text-accent">Abstract</a>
                 <a href="#" class="hover:text-accent">Portrait</a>
@@ -100,10 +102,29 @@
                 <a href="#" class="hover:text-accent">Still Life</a>
                 <a href="#" class="hover:text-accent">Impressionism</a>
                 <a href="#" class="hover:text-accent">Pop Art</a>
-                 <a href="#premium-artworks" class="text-premium-gold font-bold hover:brightness-125 transition">Premium Collection</a>
+                <a href="#premium-artworks" class="text-premium-gold font-bold hover:brightness-125 transition">Premium Collection</a>
             </nav>
         </div>
     </header>
+    
+    <!-- MOBILE MENU DRAWER -->
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-studio-noir z-20 pt-24 p-8 text-center">
+        <nav class="flex flex-col space-y-6 text-white text-xl">
+            <a href="#" class="hover:text-accent">All Art Styles</a>
+            <a href="#" class="hover:text-accent">Abstract</a>
+            <a href="#" class="hover:text-accent">Portrait</a>
+            <a href="#" class="hover:text-accent">Landscape</a>
+            <a href="#" class="hover:text-accent">Still Life</a>
+            <a href="#" class="hover:text-accent">Impressionism</a>
+            <a href="#" class="hover:text-accent">Pop Art</a>
+            <a href="#premium-artworks" class="text-premium-gold font-bold hover:brightness-125 transition">Premium Collection</a>
+            <div class="pt-6 border-t border-gray-700 space-y-6">
+                 <a href="#" class="block text-lg font-semibold hover:text-accent">Login or register</a>
+                 <a href="#" class="block text-lg font-semibold hover:text-accent">Need help?</a>
+            </div>
+        </nav>
+    </div>
+
 
     <!-- SECTION 1: THE HERO -->
     <section class="relative h-screen min-h-[700px] flex flex-col items-center justify-center text-white text-center">
@@ -117,9 +138,10 @@
                 Your next masterpiece awaits. Discover thousands of original works from independent artists worldwide.
             </p>
             <div class="mt-10 max-w-2xl mx-auto">
-                <form class="flex w-full">
-                    <input type="search" placeholder="Search by artist, style, subject, color..." class="w-full px-6 py-4 text-lg text-gray-800 bg-white/95 rounded-l-full focus:outline-none focus:ring-4 focus:ring-accent/50">
-                    <button type="submit" class="px-8 py-4 bg-accent text-white font-bold rounded-r-full hover:bg-accent-hover transition-colors flex items-center">
+                 <form role="search" class="flex w-full">
+                    <label for="hero-search" class="sr-only">Search for art</label>
+                    <input id="hero-search" type="search" placeholder="Search by artist, style, subject, color..." class="w-full px-6 py-4 text-lg text-gray-800 bg-white/95 rounded-l-full focus:outline-none focus:ring-4 focus:ring-accent/50">
+                    <button type="submit" class="px-8 py-4 bg-accent text-white font-bold rounded-r-full hover:bg-accent-hover transition-colors flex items-center" aria-label="Search">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                     </button>
                 </form>
@@ -151,7 +173,7 @@
                 <!-- Trending Items... -->
                 <div class="group">
                     <div class="relative overflow-hidden rounded-lg">
-                        <img src="https://images.pexels.com/photos/2250293/pexels-photo-2250293.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Trending art piece 1" class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <img src="https://images.pexels.com/photos/2250293/pexels-photo-2250293.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Abstract painting titled Cerulean Dream" class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500">
                         <div class="absolute top-3 left-3 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">SELLING FAST</div>
                     </div>
                     <div class="pt-4">
@@ -164,7 +186,7 @@
                 </div>
                 <div class="group">
                     <div class="relative overflow-hidden rounded-lg">
-                        <img src="https://images.pexels.com/photos/2693447/pexels-photo-2693447.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Trending art piece 2" class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <img src="https://images.pexels.com/photos/2693447/pexels-photo-2693447.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Coastal painting titled Gilded Coast" class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500">
                     </div>
                     <div class="pt-4">
                         <h3 class="font-bold text-lg">Gilded Coast</h3>
@@ -176,7 +198,7 @@
                 </div>
                 <div class="group">
                     <div class="relative overflow-hidden rounded-lg">
-                         <img src="https://images.pexels.com/photos/1149022/pexels-photo-1149022.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Trending art piece 3" class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500">
+                         <img src="https://images.pexels.com/photos/1149022/pexels-photo-1149022.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Cityscape painting titled Metropolis #3" class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500">
                          <div class="absolute top-3 left-3 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">JUST ADDED</div>
                     </div>
                     <div class="pt-4">
@@ -189,7 +211,7 @@
                 </div>
                 <div class="group">
                     <div class="relative overflow-hidden rounded-lg">
-                        <img src="https://images.pexels.com/photos/2180883/pexels-photo-2180883.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Trending art piece 4" class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <img src="https://images.pexels.com/photos/2180883/pexels-photo-2180883.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Still life painting with lemon" class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500">
                     </div>
                     <div class="pt-4">
                         <h3 class="font-bold text-lg">Still Life with Lemon</h3>
@@ -229,7 +251,7 @@
                 <!-- Products... -->
                 <div class="group bg-white p-4 rounded-lg shadow-lg transition-shadow duration-300 hover:shadow-2xl">
                     <div class="relative">
-                        <img src="https://images.pexels.com/photos/1203803/pexels-photo-1203803.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Featured art piece 1" class="w-full h-80 object-cover rounded-md mb-4">
+                        <img src="https://images.pexels.com/photos/1203803/pexels-photo-1203803.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Abstract painting titled Crimson Tide" class="w-full h-80 object-cover rounded-md mb-4">
                         <button class="quick-view-btn absolute bottom-6 right-2 bg-white/80 text-studio-noir text-xs font-bold px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm" data-id="1">Quick View</button>
                     </div>
                     <h3 class="font-bold text-lg">Crimson Tide</h3>
@@ -239,7 +261,7 @@
                 </div>
                 <div class="group bg-white p-4 rounded-lg shadow-lg transition-shadow duration-300 hover:shadow-2xl">
                     <div class="relative">
-                        <img src="https://images.pexels.com/photos/1570264/pexels-photo-1570264.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Featured art piece 2" class="w-full h-80 object-cover rounded-md mb-4">
+                        <img src="https://images.pexels.com/photos/1570264/pexels-photo-1570264.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Portrait titled Woman in Repose" class="w-full h-80 object-cover rounded-md mb-4">
                          <button class="quick-view-btn absolute bottom-6 right-2 bg-white/80 text-studio-noir text-xs font-bold px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm" data-id="2">Quick View</button>
                     </div>
                     <h3 class="font-bold text-lg">Woman in Repose</h3>
@@ -249,7 +271,7 @@
                 </div>
                  <div class="group bg-white p-4 rounded-lg shadow-lg transition-shadow duration-300 hover:shadow-2xl">
                     <div class="relative">
-                        <img src="https://images.pexels.com/photos/1457812/pexels-photo-1457812.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Featured art piece 3" class="w-full h-80 object-cover rounded-md mb-4">
+                        <img src="https://images.pexels.com/photos/1457812/pexels-photo-1457812.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Cityscape painting titled City at Dusk" class="w-full h-80 object-cover rounded-md mb-4">
                          <button class="quick-view-btn absolute bottom-6 right-2 bg-white/80 text-studio-noir text-xs font-bold px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm" data-id="3">Quick View</button>
                     </div>
                     <h3 class="font-bold text-lg">City at Dusk</h3>
@@ -270,15 +292,15 @@
                 <div class="space-y-4 max-w-2xl mx-auto">
                     <!-- Sold Items... -->
                     <div class="bg-gray-800/50 p-3 rounded-lg flex items-center space-x-4 animate-pulse-slow">
-                        <img src="https://images.pexels.com/photos/1203803/pexels-photo-1203803.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" class="w-12 h-12 rounded-md object-cover flex-shrink-0" alt="Sold art">
+                        <img src="https://images.pexels.com/photos/1203803/pexels-photo-1203803.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" class="w-12 h-12 rounded-md object-cover flex-shrink-0" alt="Sold art: Crimson Tide">
                         <p class="text-sm">"Crimson Tide" by Santiago L. just sold to a collector in <strong>New York, USA</strong> <span class="text-gray-400"> (2 minutes ago)</span></p>
                     </div>
                      <div class="bg-gray-800/50 p-3 rounded-lg flex items-center space-x-4">
-                        <img src="https://images.pexels.com/photos/1457812/pexels-photo-1457812.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" class="w-12 h-12 rounded-md object-cover flex-shrink-0" alt="Sold art">
+                        <img src="https://images.pexels.com/photos/1457812/pexels-photo-1457812.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" class="w-12 h-12 rounded-md object-cover flex-shrink-0" alt="Sold art: City at Dusk">
                         <p class="text-sm">"City at Dusk" by Kenji Tanaka just sold to a collector in <strong>London, UK</strong> <span class="text-gray-400"> (15 minutes ago)</span></p>
                     </div>
                     <div class="bg-gray-800/50 p-3 rounded-lg flex items-center space-x-4">
-                        <img src="https://images.pexels.com/photos/1570264/pexels-photo-1570264.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" class="w-12 h-12 rounded-md object-cover flex-shrink-0" alt="Sold art">
+                        <img src="https://images.pexels.com/photos/1570264/pexels-photo-1570264.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" class="w-12 h-12 rounded-md object-cover flex-shrink-0" alt="Sold art: Woman in Repose">
                         <p class="text-sm">"Woman in Repose" by Elena V. just sold to a collector in <strong>Sydney, AU</strong> <span class="text-gray-400"> (48 minutes ago)</span></p>
                     </div>
                 </div>
@@ -311,11 +333,9 @@
             </div>
         </section>
 
-        <!-- ARTIST SPOTLIGHT remains same -->
-
     </main>
     
-    <!-- ARTIST CTA & FOOTER remain same -->
+    <!-- ARTIST CTA -->
     <section id="artist-cta" class="scroll-target bg-studio-noir text-gallery-white">
         <div class="container mx-auto px-4 py-16 md:py-24 text-center">
             <h2 class="text-4xl md:text-5xl font-serif font-bold">Your Art Deserves an Audience.</h2>
@@ -328,28 +348,75 @@
         </div>
     </section>
 
-    <footer class="bg-gray-100">
-        <div class="container mx-auto px-4 py-12">
-        <!-- Footer content from previous version -->
+    <!-- FOOTER -->
+    <footer class="bg-gray-100 text-gray-600">
+        <div class="container mx-auto px-4 py-16">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
+                <div class="col-span-2 lg:col-span-1">
+                     <a href="#" aria-label="Flareinn Homepage">
+                        <img src="https://i.ibb.co/pW1sS9s/flareinn-logo-dark.png" alt="Flareinn Logo" class="h-10 w-auto mb-4">
+                    </a>
+                    <p class="text-sm">The world's leading marketplace for original art. Discover your next masterpiece.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-studio-noir mb-4">For Buyers</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-accent">Why Buy From Us?</a></li>
+                        <li><a href="#" class="hover:text-accent">Art Advisory</a></li>
+                        <li><a href="#" class="hover:text-accent">Testimonials</a></li>
+                        <li><a href="#" class="hover:text-accent">Gift Cards</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-studio-noir mb-4">For Artists</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-accent">Why Sell With Us?</a></li>
+                        <li><a href="#" class="hover:text-accent">Seller Handbook</a></li>
+                        <li><a href="#" class="hover:text-accent">Submit Your Art</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-studio-noir mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-accent">About Us</a></li>
+                        <li><a href="#" class="hover:text-accent">Contact</a></li>
+                        <li><a href="#" class="hover:text-accent">Careers</a></li>
+                        <li><a href="#" class="hover:text-accent">Press</a></li>
+                    </ul>
+                </div>
+                 <div>
+                    <h4 class="font-bold text-studio-noir mb-4">Connect</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-accent">Facebook</a></li>
+                        <li><a href="#" class="hover:text-accent">Instagram</a></li>
+                        <li><a href="#" class="hover:text-accent">Pinterest</a></li>
+                        <li><a href="#" class="hover:text-accent">Youtube</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-gray-200 text-center text-sm">
+                <p>&copy; 2025 Flareinn. All Rights Reserved.</p>
+            </div>
         </div>
     </footer>
     
     <!-- QUICK VIEW MODAL -->
-    <div id="quick-view-modal" class="hidden fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4">
+    <div id="quick-view-modal" role="dialog" aria-modal="true" aria-labelledby="quick-view-title" class="hidden fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4">
         <div id="quick-view-content" class="bg-white rounded-lg w-full max-w-4xl max-h-[90vh] flex flex-col md:flex-row relative animate-fadeIn">
             <!-- Content will be injected by JS -->
         </div>
     </div>
 
     <!-- EXIT-INTENT MODAL -->
-    <div id="exit-intent-modal" class="hidden fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4">
+    <div id="exit-intent-modal" role="dialog" aria-modal="true" aria-labelledby="exit-intent-title" class="hidden fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4">
         <div class="bg-white rounded-lg w-full max-w-md text-center p-8 relative animate-fadeIn">
-            <button id="close-exit-intent" class="absolute top-2 right-2 text-gray-400 hover:text-black">&times;</button>
-            <h2 class="text-3xl font-serif font-bold text-accent">Wait!</h2>
+            <button id="close-exit-intent" class="absolute top-2 right-2 text-gray-400 hover:text-black" aria-label="Close dialog">&times;</button>
+            <h2 id="exit-intent-title" class="text-3xl font-serif font-bold text-accent">Wait!</h2>
             <p class="text-lg mt-2 text-gray-700">Leaving so soon? Find your perfect piece today.</p>
             <p class="mt-4 font-bold">Get 10% OFF your first purchase.</p>
             <form class="mt-4 flex">
-                <input type="email" placeholder="Enter your email for your discount" class="w-full px-4 py-2 border border-r-0 border-gray-300 rounded-l-full focus:outline-none focus:ring-2 focus:ring-accent">
+                <label for="exit-intent-email" class="sr-only">Email for discount</label>
+                <input id="exit-intent-email" type="email" placeholder="Enter your email for your discount" class="w-full px-4 py-2 border border-r-0 border-gray-300 rounded-l-full focus:outline-none focus:ring-2 focus:ring-accent">
                 <button type="submit" class="px-6 py-2 bg-accent text-white font-bold rounded-r-full hover:bg-accent-hover">Claim My 10%</button>
             </form>
             <p class="text-xs text-gray-400 mt-2">We respect your privacy. Unsubscribe anytime.</p>
@@ -370,6 +437,22 @@
                 header.classList.add('absolute');
             }
         });
+        
+        // --- MOBILE MENU TOGGLE SCRIPT ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIconOpen = document.getElementById('menu-icon-open');
+        const menuIconClose = document.getElementById('menu-icon-close');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+            mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+            mobileMenu.classList.toggle('hidden');
+            menuIconOpen.classList.toggle('hidden');
+            menuIconClose.classList.toggle('hidden');
+            document.body.classList.toggle('overflow-hidden', !isExpanded);
+        });
+
 
         // --- Fade-in elements on scroll ---
         const targets = document.querySelectorAll('.scroll-target');
@@ -387,7 +470,6 @@
         const quickViewModal = document.getElementById('quick-view-modal');
         const quickViewContent = document.getElementById('quick-view-content');
         
-        // Mock data for products
         const products = {
             '1': { title: 'Crimson Tide', artist: 'Santiago L.', price: '$1,800', img: 'https://images.pexels.com/photos/1203803/pexels-photo-1203803.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', desc: 'A powerful and emotive abstract piece, representing the dynamic flow of energy. Created with high-quality oils on a stretched canvas.' },
             '2': { title: 'Woman in Repose', artist: 'Elena Vasilieva', price: '$3,400', img: 'https://images.pexels.com/photos/1570264/pexels-photo-1570264.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2', desc: 'A stunning charcoal portrait that captures a moment of quiet contemplation and profound emotion.' },
@@ -401,12 +483,12 @@
                 const product = products[productId];
                 
                 quickViewContent.innerHTML = `
-                    <button id="close-quick-view-inner" class="absolute -top-3 -right-3 bg-white text-black rounded-full h-8 w-8 flex items-center justify-center shadow-lg z-10">&times;</button>
+                    <button id="close-quick-view-inner" class="absolute -top-3 -right-3 bg-white text-black rounded-full h-8 w-8 flex items-center justify-center shadow-lg z-10" aria-label="Close dialog">&times;</button>
                     <div class="w-full md:w-1/2 h-64 md:h-auto">
                         <img src="${product.img}" alt="${product.title}" class="w-full h-full object-cover rounded-l-lg">
                     </div>
                     <div class="w-full md:w-1/2 p-8 flex flex-col">
-                        <h2 class="text-3xl font-serif font-bold">${product.title}</h2>
+                        <h2 id="quick-view-title" class="text-3xl font-serif font-bold">${product.title}</h2>
                         <p class="text-lg text-gray-600 mt-1">by ${product.artist}</p>
                         <p class="text-gray-700 my-4 flex-grow">${product.desc}</p>
                         <div class="mt-auto">
@@ -417,30 +499,74 @@
                     </div>
                 `;
                 
-                quickViewModal.classList.remove('hidden');
-                document.getElementById('close-quick-view-inner').addEventListener('click', () => quickViewModal.classList.add('hidden'));
+                showModal(quickViewModal);
             });
-        });
-
-        quickViewModal.addEventListener('click', (e) => {
-            if (e.target === quickViewModal) {
-                quickViewModal.classList.add('hidden');
-            }
         });
 
         // --- Exit-Intent Modal ---
         const exitIntentModal = document.getElementById('exit-intent-modal');
-        const closeExitIntentBtn = document.getElementById('close-exit-intent');
         let exitIntentTriggered = false;
 
         document.addEventListener('mouseleave', (e) => {
             if (e.clientY <= 0 && !exitIntentTriggered) {
                 exitIntentTriggered = true;
-                exitIntentModal.classList.remove('hidden');
+                showModal(exitIntentModal);
             }
         });
 
-        closeExitIntentBtn.addEventListener('click', () => exitIntentModal.classList.add('hidden'));
+        // --- Accessible Modal Functionality ---
+        let lastFocusedElement;
+
+        function showModal(modal) {
+            lastFocusedElement = document.activeElement;
+            modal.classList.remove('hidden');
+            
+            const focusableElements = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+            const firstElement = focusableElements[0];
+            const lastElement = focusableElements[focusableElements.length - 1];
+
+            if (firstElement) {
+                firstElement.focus();
+            }
+
+            const handleTabKeyPress = (e) => {
+                if (e.key === 'Tab') {
+                    if (!focusableElements.length) return;
+
+                    if (e.shiftKey && document.activeElement === firstElement) {
+                        e.preventDefault();
+                        lastElement.focus();
+                    } else if (!e.shiftKey && document.activeElement === lastElement) {
+                        e.preventDefault();
+                        firstElement.focus();
+                    }
+                }
+            };
+            
+            const handleEscapeKeyPress = (e) => {
+                if (e.key === 'Escape') {
+                    hideModal(modal, handleTabKeyPress, handleEscapeKeyPress);
+                }
+            };
+            
+            modal.addEventListener('keydown', handleTabKeyPress);
+            document.addEventListener('keydown', handleEscapeKeyPress);
+
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal || e.target.closest('[id^="close-"]')) {
+                    hideModal(modal, handleTabKeyPress, handleEscapeKeyPress);
+                }
+            });
+        }
+        
+        function hideModal(modal, tabHandler, escapeHandler) {
+            modal.classList.add('hidden');
+            modal.removeEventListener('keydown', tabHandler);
+            document.removeEventListener('keydown', escapeHandler);
+            if (lastFocusedElement) {
+                lastFocusedElement.focus();
+            }
+        }
     });
     </script>
 </body>
